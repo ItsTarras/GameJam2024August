@@ -551,6 +551,14 @@ PrefabInstance:
       value: Ship Intelligence
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: forgiveness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1957028877}
