@@ -7,7 +7,6 @@ public class InteractionPrompt : MonoBehaviour
     [SerializeField] Transform worldSpaceAnchor;
     private Camera MainCamera;
     [SerializeField] SpriteRenderer redCircle;
-    private float circleScale = 1f;
 
     void Start()
     {
@@ -20,7 +19,9 @@ public class InteractionPrompt : MonoBehaviour
     void Update()
     {
         // Shrink red circle
-        redCircle.material.SetFloat("_Scale", Mathf.PingPong(Time.time, circleScale));
+        float circleScale = parentMachine.getPercentageToNextBeat();
+        print(circleScale);
+        redCircle.material.SetFloat("_Scale", circleScale);
 
         // Match button position to machine
         Vector3 screenPos = MainCamera.WorldToScreenPoint(worldSpaceAnchor.position);

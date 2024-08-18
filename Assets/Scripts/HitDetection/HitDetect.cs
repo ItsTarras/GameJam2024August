@@ -13,7 +13,7 @@ public class HitDetect : MonoBehaviour
     OutwardZoom cameraToZoomOutOnHit;
 
     // Beat matching config
-    [SerializeField] int targetBeatToHit; // hit the key every x beats
+    public int targetBeatToHit; // hit the key every x beats
 
     // radius around the exact timing where your input still counts
     // (eg within forgiveness beats before or after perfect still counts)
@@ -93,5 +93,11 @@ public class HitDetect : MonoBehaviour
             }
             #endregion
         }
+    }
+
+    internal float getPercentageToNextBeat()
+    {
+        float beatsToNextBeat = targetBeatToHit - soundManager.songPositionInBeats % targetBeatToHit;
+        return beatsToNextBeat / targetBeatToHit;
     }
 }
