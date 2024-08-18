@@ -8,12 +8,12 @@ public class OutwardZoom : MonoBehaviour
     public SoundManager soundManager;
 
     //Get all the game objects that we will be trying to view within the camera viewport. If they are within the camera viewport, activate it using its public method (should get one).
-    public List<GameObject> machines = new List<GameObject>();
+    public List<HitDetect> machines = new List<HitDetect>();
 
     private Camera cam;
     [Range(0.01f, 1f)][SerializeField] float shrinkSpeed;
 
-    [Range(0.05f, 1f)][SerializeField] private float zoomOutStrength;
+
 
 
     // Start is called before the first frame update
@@ -39,8 +39,23 @@ public class OutwardZoom : MonoBehaviour
         }
     }
 
-    public void ZoomOut()
+    public void ZoomOut(float zoomOutStrength)
     {
         cam.orthographicSize += zoomOutStrength;
+        checkObjects();
+    }
+
+    public void checkObjects()
+    {
+        #region Check what objects are within the camera frustum, and if they need to have their keys activated.
+        foreach(HitDetect machine in machines)
+        {
+            if (CameraExtensions.IsObjectVisible(cam, machine.transform.position, -0.03f))
+            {
+                //Set the machine to be active.
+                machine.activated = true;
+            }
+        }
+        #endregion
     }
 }
