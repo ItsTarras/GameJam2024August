@@ -674,4 +674,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentMachine: {fileID: 8151830001503785687}
   worldSpaceAnchor: {fileID: 3401897365214249301}
-  redCircle: {fileID: 5924217906160237929}
+  redCircle: {fileID: 0}

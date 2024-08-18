@@ -20,7 +20,6 @@ public class InteractionPrompt : MonoBehaviour
     {
         // Shrink red circle
         float circleScale = parentMachine.getPercentageToNextBeat();
-        print(circleScale);
         redCircle.material.SetFloat("_Scale", circleScale);
 
         // Match button position to machine
