@@ -10,16 +10,17 @@ public class OutwardZoom : MonoBehaviour
     //Get all the game objects that we will be trying to view within the camera viewport. If they are within the camera viewport, activate it using its public method (should get one).
     public List<GameObject> machines = new List<GameObject>();
 
-
     private Camera cam;
+    [Range(0.01f, 1f)][SerializeField] float shrinkSpeed;
 
+    [Range(0.05f, 1f)][SerializeField] private float zoomOutStrength;
 
 
     // Start is called before the first frame update
     void Start()
     {
         cam = GetComponent<Camera>();
-        StartCoroutine("cameraShrinkage");
+        StartCoroutine(nameof(CameraShrinkage));
     }
 
     // Update is called once per frame
@@ -28,18 +29,18 @@ public class OutwardZoom : MonoBehaviour
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 1, 20);
     }
 
-    private IEnumerator cameraShrinkage()
+    private IEnumerator CameraShrinkage()
     {
         while (true)
         {
-            
-            cam.orthographicSize -= Time.deltaTime * Time.deltaTime * soundManager.songBpm * cam.orthographicSize / 3;
+
+            cam.orthographicSize -= Time.deltaTime * Time.deltaTime * soundManager.songBpm * cam.orthographicSize * shrinkSpeed;
             yield return null;
         }
     }
 
-    public void zoomOut(float value)
+    public void ZoomOut()
     {
-        cam.orthographicSize += value;
+        cam.orthographicSize += zoomOutStrength;
     }
 }

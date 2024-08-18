@@ -10,9 +10,7 @@ public class HitDetect : MonoBehaviour
     [SerializeField] AudioSource hitConfirmSoundEffect;
     [SerializeField] AudioSource beatMissedSoundEffect;
     [SerializeField] public KeyCode key;
-    public Camera cameraToZoomOutOnHit;
-    [Range(0.05f, 1f)]
-    [SerializeField] private float cameraZoomOutStrength;
+    OutwardZoom cameraToZoomOutOnHit;
 
     // Beat matching config
     [SerializeField] int targetBeatToHit; // hit the key every x beats
@@ -31,7 +29,7 @@ public class HitDetect : MonoBehaviour
 
     private void Start()
     {
-
+        cameraToZoomOutOnHit = Camera.main.GetComponent<OutwardZoom>();
     }
 
     void Update()
@@ -52,7 +50,8 @@ public class HitDetect : MonoBehaviour
                 hitThisRound = true;
 
                 //Apply the camera zoom out effect if we hit this.
-                cameraToZoomOutOnHit.GetComponent<OutwardZoom>().zoomOut(cameraZoomOutStrength);
+
+                cameraToZoomOutOnHit.ZoomOut();
             }
             #endregion
 
