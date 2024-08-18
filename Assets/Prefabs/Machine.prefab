@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &477008702216355396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3401897365214249301}
+  m_Layer: 0
+  m_Name: InteractionPromptAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3401897365214249301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477008702216355396}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8873030165818852175}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3290556256028336115
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +315,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2427582587735414650}
+  - {fileID: 3401897365214249301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8151830001503785687
@@ -302,7 +334,6 @@ MonoBehaviour:
   hitConfirmSoundEffect: {fileID: 6083498531816153943}
   beatMissedSoundEffect: {fileID: 8926815465246605773}
   key: 101
-  cameraToZoomOutOnHit: {fileID: 0}
   targetBeatToHit: 0
   forgiveness: 0
   targetScale: 0
@@ -589,4 +620,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentMachine: {fileID: 8151830001503785687}
-  buttonHeight: 60
+  worldSpaceAnchor: {fileID: 3401897365214249301}

@@ -217,7 +217,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1416268830}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -312,6 +313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3401897365214249301, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -319,6 +324,10 @@ PrefabInstance:
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
       value: Archive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
@@ -348,9 +357,13 @@ PrefabInstance:
       propertyPath: cameraZoomOutStrength
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 8828059878154447363, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: buttonHeight
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.22
+      value: -3.78
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.y
@@ -522,7 +535,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1545229964}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -927,6 +940,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3401897365214249301, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -989,7 +1006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828059878154447363, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: buttonHeight
-      value: 250
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1044,8 +1061,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 609784419}
   - {fileID: 1957028879}
-  - {fileID: 1416268830}
   - {fileID: 5154395539029476937}
   - {fileID: 743922026}
-  - {fileID: 609784419}

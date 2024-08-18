@@ -4,8 +4,8 @@ using UnityEngine;
 public class InteractionPrompt : MonoBehaviour
 {
     public HitDetect parentMachine;
+    [SerializeField] Transform worldSpaceAnchor;
     private Camera MainCamera;
-    [SerializeField] float buttonHeight;
 
     void Start()
     {
@@ -18,9 +18,7 @@ public class InteractionPrompt : MonoBehaviour
     void Update()
     {
         // Match button position to machine
-        // (Doesn't work in start for some reason)
-        Vector3 screenPos = MainCamera.WorldToScreenPoint(parentMachine.transform.position);
-        Vector3 offset = new(0, buttonHeight, 0);
-        transform.position = screenPos + offset;
+        Vector3 screenPos = MainCamera.WorldToScreenPoint(worldSpaceAnchor.position);
+        transform.position = screenPos;
     }
 }
