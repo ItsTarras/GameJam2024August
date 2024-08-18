@@ -235,8 +235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundManager: {fileID: 1957028877}
   machines: []
-  shrinkSpeed: 0.1
-  zoomOutStrength: 0.388
+  shrinkSpeed: 0.05
+  zoomOutStrength: 0.3
 --- !u!1 &609784416
 GameObject:
   m_ObjectHideFlags: 0
