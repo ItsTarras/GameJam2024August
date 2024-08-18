@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8873030165818852175}
@@ -674,3 +674,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentMachine: {fileID: 8151830001503785687}
   worldSpaceAnchor: {fileID: 3401897365214249301}
+  redCircle: {fileID: 5924217906160237929}
