@@ -34,8 +34,14 @@ public class OutwardZoom : MonoBehaviour
 
     public void ZoomOut(float zoomOutStrength)
     {
-        //Instead of moving the camera out a flat value, have it only consistently grow if you can hit all the keys properly. Divide the strength by the number of currently activated machines.
-        cam.orthographicSize += Mathf.Clamp(zoomOutStrength / (numberMachinesActivated * 0.25f), 0.1f, 0.5f); //Divide by 4 beats per bar. Don't want to hinder the growth by having a lot of machines that arent pressed often enough to keep growing.
+        //Instead of moving the camera out a flat value, have it only consistently grow if you can hit all the keys properly.
+        // Divide the strength by the number of currently activated machines.
+        //Divide by 4 beats per bar. Don't want to hinder the growth by having a lot of machines
+        // that arent pressed often enough to keep growing.
+
+        float modifiedDelta = zoomOutStrength / (numberMachinesActivated * 0.25f);
+        print($"Zooming out by {modifiedDelta}");
+        cam.orthographicSize += Mathf.Clamp(modifiedDelta, 0.1f, 0.5f); 
         CheckObjects();
     }
 
@@ -44,7 +50,7 @@ public class OutwardZoom : MonoBehaviour
         #region Check what objects are within the camera frustum, and if they need to have their keys activated.
         foreach(HitDetect machine in machines)
         {
-            if (CameraExtensions.IsObjectVisible(cam, machine.transform.position, -0.05f))
+            if (CameraExtensions.IsObjectVisible(cam, machine.transform.position, -0.05f) && !machine.activated)
             {
                 //Set the machine to be active.
                 machine.activated = true;
