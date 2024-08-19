@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HitDetect : MonoBehaviour
 {
     private SoundManager soundManager;
-
+    public Menu menu;
     [SerializeField] AudioSource hitConfirmSoundEffect;
     [SerializeField] AudioSource beatMissedSoundEffect;
     [SerializeField] public KeyCode key;
@@ -34,12 +33,14 @@ public class HitDetect : MonoBehaviour
     private void Start()
     {
         cameraToZoomOutOnHit = Camera.main.GetComponent<OutwardZoom>();
+        // Technically bad practice to assume singletons like this but I'm not assigning for every single machine
         soundManager = FindAnyObjectByType<SoundManager>();
     }
 
     void Update()
     {
-        if(activated)
+        keyToHitImage.SetActive(!menu.paused);
+        if(activated && !menu.paused)
         {
             // For every `cooldown` beat, if you time it properly,
             // a sound effect will play. (The hitConfirmSoundEffect variable.)
@@ -103,7 +104,7 @@ public class HitDetect : MonoBehaviour
         }
     }
 
-    internal float getPercentageToNextBeat()
+    internal float GetPercentageToNextBeat()
     {
         float beatsToNextBeat = targetBeatToHit - soundManager.songPositionInBeats % targetBeatToHit;
         return beatsToNextBeat / targetBeatToHit;

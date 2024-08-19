@@ -11,41 +11,33 @@ public class OutwardZoom : MonoBehaviour
     public List<HitDetect> machines = new List<HitDetect>();
 
     private Camera cam;
+    [SerializeField] Menu menu;
     [Range(0.01f, 1f)][SerializeField] float shrinkSpeed;
-
-
-
+    [Range(0.5f, 5f)][SerializeField] float minZoom;
+    [Range(5f, 100f)][SerializeField] float maxZoom;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = GetComponent<Camera>();
-        StartCoroutine(nameof(CameraShrinkage));
     }
 
     // Update is called once per frame
     void Update()
     {
-        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 1, 20);
-    }
-
-    private IEnumerator CameraShrinkage()
-    {
-        while (true)
-        {
-
-            cam.orthographicSize -= Time.deltaTime * Time.deltaTime * soundManager.songBpm * cam.orthographicSize * 1.2f * shrinkSpeed;
-            yield return null;
+        if (!menu.paused) {
+            cam.orthographicSize -= Time.deltaTime * Time.deltaTime * soundManager.songBpm * cam.orthographicSize * shrinkSpeed;
+            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
         }
     }
 
     public void ZoomOut(float zoomOutStrength)
     {
         cam.orthographicSize += zoomOutStrength;
-        checkObjects();
+        CheckObjects();
     }
 
-    public void checkObjects()
+    public void CheckObjects()
     {
         #region Check what objects are within the camera frustum, and if they need to have their keys activated.
         foreach(HitDetect machine in machines)

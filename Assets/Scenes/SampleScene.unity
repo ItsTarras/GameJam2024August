@@ -484,7 +484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -494,6 +494,10 @@ PrefabInstance:
       propertyPath: key
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 3
@@ -573,7 +577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -583,6 +587,10 @@ PrefabInstance:
       propertyPath: key
       value: 273
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 6
@@ -677,7 +685,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -687,6 +695,10 @@ PrefabInstance:
       propertyPath: key
       value: 119
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: activated
       value: 0
@@ -904,7 +916,10 @@ MonoBehaviour:
   - {fileID: 161488210}
   - {fileID: 1830726812}
   - {fileID: 2122717436}
-  shrinkSpeed: 0.05
+  menu: {fileID: 791688228}
+  shrinkSpeed: 0.01
+  minZoom: 1
+  maxZoom: 20
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,7 +1380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -1379,6 +1394,10 @@ PrefabInstance:
       propertyPath: key
       value: 114
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: forgiveness
       value: 0.3
@@ -1565,7 +1584,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -1575,6 +1594,10 @@ PrefabInstance:
       propertyPath: key
       value: 32
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 7
@@ -1725,8 +1748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c82078c567806493a2c7dcc6db4bba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomManager: {fileID: 519420033}
   ship: {fileID: 1408683711}
   firstMachine: {fileID: 425513424}
+  paused: 0
 --- !u!4 &908090497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
@@ -1858,7 +1883,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -1868,6 +1893,10 @@ PrefabInstance:
       propertyPath: key
       value: 114
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 6
@@ -2042,12 +2071,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
       value: Co2 Exchanger
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 2
@@ -2228,7 +2261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1408683712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2841,7 +2874,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 5924217906160237929, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SortingOrder
@@ -2855,6 +2888,10 @@ PrefabInstance:
       propertyPath: key
       value: 275
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 3
@@ -2949,7 +2986,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -2959,6 +2996,10 @@ PrefabInstance:
       propertyPath: key
       value: 276
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 5
@@ -3451,7 +3492,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -13.809999
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -3461,6 +3502,10 @@ PrefabInstance:
       propertyPath: key
       value: 97
       objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 5
@@ -3570,7 +3615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -12.459999
       objectReference: {fileID: 0}
     - target: {fileID: 5435189068895807549, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_fontSize
@@ -3589,6 +3634,10 @@ PrefabInstance:
       value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 791688228}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: cooldown
       value: 2
       objectReference: {fileID: 0}
@@ -3606,7 +3655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: cameraToZoomOutOnHit

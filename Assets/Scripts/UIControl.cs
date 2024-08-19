@@ -7,7 +7,11 @@ public class UIControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menu.SetActive(!menu.activeSelf);
+            if (menu.activeSelf) {
+                menu.GetComponent<Menu>().Play();
+            } else {
+                menu.SetActive(true);
+            }
         }
     }
 }
