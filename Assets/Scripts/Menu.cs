@@ -4,6 +4,7 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
     [SerializeField] OutwardZoom zoomManager;
+    [SerializeField] SoundManager soundManager;
     [SerializeField] GameObject ship;
     [SerializeField] HitDetect firstMachine;
     [HideInInspector] public bool paused = true;
@@ -15,7 +16,8 @@ public class Menu : MonoBehaviour
     public void Play() {
         ship.SetActive(true); // Show the ship
         paused = false; // control camera zoom, red circle closing, key prompts
-        firstMachine.activated = true; // activate the ship intelligence
+        firstMachine.Activate(); // activate the ship intelligence
+        soundManager.PlayMusicTracks();
         gameObject.SetActive(false); // hide the menu
     }
 

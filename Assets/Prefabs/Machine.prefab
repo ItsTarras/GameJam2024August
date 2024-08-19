@@ -387,6 +387,7 @@ MonoBehaviour:
   menu: {fileID: 0}
   hitConfirmSoundEffect: {fileID: 6083498531816153943}
   beatMissedSoundEffect: {fileID: 8926815465246605773}
+  soundtrackContribution: {fileID: 4438505770569169179}
   key: 120
   zoomOutStrength: 0.05
   targetBeatToHit: 0
@@ -597,11 +598,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
-  Mute: 0
+  Loop: 1
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

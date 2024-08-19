@@ -9,9 +9,6 @@ public class SoundManager : MonoBehaviour
     //Each object that has an audio source attached to it. Whenever we complete something, turn it up?
     public List<AudioSource> audioSources = new List<AudioSource>();
 
-    //The music track that the sound manager should play.
-    public List<AudioClip> musicTracks = new List<AudioClip>();
-
     //The offset to the first beat of the song in seconds
     [SerializeField]
     float firstBeatOffset;
@@ -56,7 +53,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -70,16 +66,16 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlayMusicTrack()
+    public void PlayMusicTracks()
     {
         for (int i = 0; i < audioSources.Count; i++)
         {
-            audioSources[i].clip = musicTracks[i];
             audioSources[i].Play();
         }
+        StartMusicCounter();
     }
 
-    public void startMusicCounter()
+    private void StartMusicCounter()
     {
         //Record the time when the music starts
         dspSongTime = (float)AudioSettings.dspTime;

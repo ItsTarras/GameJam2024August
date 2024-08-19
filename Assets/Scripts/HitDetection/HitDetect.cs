@@ -7,6 +7,7 @@ public class HitDetect : MonoBehaviour
     public Menu menu;
     [SerializeField] AudioSource hitConfirmSoundEffect;
     [SerializeField] AudioSource beatMissedSoundEffect;
+    [SerializeField] public AudioSource soundtrackContribution;
     [SerializeField] public KeyCode key;
     OutwardZoom cameraToZoomOutOnHit;
     [Range(0.05f, 1f)][SerializeField] private float zoomOutStrength;
@@ -111,5 +112,10 @@ public class HitDetect : MonoBehaviour
     {
         float beatsToNextBeat = targetBeatToHit - soundManager.songPositionInBeats % targetBeatToHit;
         return beatsToNextBeat / targetBeatToHit;
+    }
+    
+    public void Activate() {
+        activated = true;
+        soundtrackContribution.mute = false;
     }
 }

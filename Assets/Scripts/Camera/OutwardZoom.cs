@@ -53,7 +53,7 @@ public class OutwardZoom : MonoBehaviour
             if (CameraExtensions.IsObjectVisible(cam, machine.transform.position, -0.05f) && !machine.activated)
             {
                 //Set the machine to be active.
-                machine.activated = true;
+                machine.Activate();
                 numberMachinesActivated++;
             }
         }
