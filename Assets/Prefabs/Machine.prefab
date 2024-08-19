@@ -388,8 +388,8 @@ MonoBehaviour:
   key: 120
   zoomOutStrength: 0.05
   targetBeatToHit: 0
-  forgiveness: 0
-  targetScale: 0
+  forgiveness: 0.3
+  targetScale: 2
   keyToHitImage: {fileID: 6778582289202707674}
   activated: 0
 --- !u!82 &6083498531816153943
@@ -612,7 +612,7 @@ RectTransform:
   m_GameObject: {fileID: 6778582289202707674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3528168978322333905}
