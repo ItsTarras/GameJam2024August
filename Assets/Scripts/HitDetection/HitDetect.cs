@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class HitDetect : MonoBehaviour
 {
-    [SerializeField]
     private SoundManager soundManager;
 
     [SerializeField] AudioSource hitConfirmSoundEffect;
@@ -35,6 +34,7 @@ public class HitDetect : MonoBehaviour
     private void Start()
     {
         cameraToZoomOutOnHit = Camera.main.GetComponent<OutwardZoom>();
+        soundManager = FindAnyObjectByType<SoundManager>();
     }
 
     void Update()

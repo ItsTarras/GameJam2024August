@@ -8,7 +8,7 @@ public static class CameraExtensions
         Vector3 viewPos = camera.WorldToViewportPoint(objectPosition);
 
         //Check if within camera's view bounds AABB .
-        Debug.Log($"ViewPos: {viewPos.x}, {viewPos.y}, {viewPos.z}");
+        // Debug.Log($"ViewPos: {viewPos.x}, {viewPos.y}, {viewPos.z}");
         return viewPos.x > 0f - margin && viewPos.x < 1f + margin &&
                viewPos.y > 0f - margin && viewPos.y < 1f + margin;
     }

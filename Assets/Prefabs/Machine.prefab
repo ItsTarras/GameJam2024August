@@ -383,14 +383,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ab9b710195964478eef1ca8cc4866c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundManager: {fileID: 0}
   hitConfirmSoundEffect: {fileID: 6083498531816153943}
   beatMissedSoundEffect: {fileID: 8926815465246605773}
-  key: 101
+  key: 120
+  zoomOutStrength: 0.05
   targetBeatToHit: 0
   forgiveness: 0
   targetScale: 0
-  keyToHitImage: {fileID: 0}
+  keyToHitImage: {fileID: 6778582289202707674}
+  activated: 0
 --- !u!82 &6083498531816153943
 AudioSource:
   m_ObjectHideFlags: 0
