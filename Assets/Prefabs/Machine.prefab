@@ -222,7 +222,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -13.809999, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7694539402949210580
 CanvasRenderer:
@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ab9b710195964478eef1ca8cc4866c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
   hitConfirmSoundEffect: {fileID: 6083498531816153943}
   beatMissedSoundEffect: {fileID: 8926815465246605773}
   key: 120
@@ -602,7 +603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4150608681343127594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -674,5 +675,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentMachine: {fileID: 8151830001503785687}
-  worldSpaceAnchor: {fileID: 3401897365214249301}
-  redCircle: {fileID: 5924217906160237929}
+  anchor: {fileID: 477008702216355396}

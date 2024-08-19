@@ -5,9 +5,8 @@ using UnityEngine.UI;
 public class InteractionPrompt : MonoBehaviour
 {
     public HitDetect parentMachine;
-    [SerializeField] Transform worldSpaceAnchor;
+    public GameObject anchor;
     private Camera mainCamera;
-    [SerializeField] SpriteRenderer redCircle;
 
     void Start()
     {
@@ -19,14 +18,14 @@ public class InteractionPrompt : MonoBehaviour
 
     void Update()
     {
-        if (parentMachine.activated && !parentMachine.menu.paused) {
+        if (parentMachine.activated) {
             // Shrink red circle
             float circleScale = parentMachine.GetPercentageToNextBeat();
-            redCircle.material.SetFloat("_Scale", circleScale);
+            anchor.GetComponent<SpriteRenderer>().material.SetFloat("_Scale", circleScale);
         }
 
         // Match button position to machine
-        Vector3 screenPos = mainCamera.WorldToScreenPoint(worldSpaceAnchor.position);
+        Vector3 screenPos = mainCamera.WorldToScreenPoint(anchor.transform.position);
         transform.position = screenPos;
     }
 }

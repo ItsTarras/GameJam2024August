@@ -8,6 +8,10 @@ public class Menu : MonoBehaviour
     [SerializeField] HitDetect firstMachine;
     [HideInInspector] public bool paused = true;
 
+    public void Start() {
+        ship.SetActive(false); // done in code in case we forget in the editor
+    }
+
     public void Play() {
         ship.SetActive(true); // Show the ship
         paused = false; // control camera zoom, red circle closing, key prompts
