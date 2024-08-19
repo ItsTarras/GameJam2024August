@@ -32,47 +32,60 @@ public class SoundManager : MonoBehaviour
     float songPosition;
 
     //How many seconds have passed since the song started
-    float dspSongTime;
+    float dspSongTime = 0;
+
+    private bool startBpmCounter = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Gets the bpm of a song that is placed inside the returnBPM component of an object.
-        songBpm = musicManager.GetComponent<returnBPM>().getBPM();
+        //Gets the bpm of a song that is placed inside the returnBPM component of an object. Only if we have it set to 0.
+        if(songBpm == 0)
+        {
+            songBpm = musicManager.GetComponent<returnBPM>().getBPM();
+        }
 
         //Calculate the number of seconds in each beat
         secPerBeat = 60f / songBpm;
-
-        //Record the time when the music starts
-        dspSongTime = (float)AudioSettings.dspTime;
     }
 
     private void Awake()
     {
-        //Gets the bpm of a song that is placed inside the returnBPM component of an object.
-        songBpm = musicManager.GetComponent<returnBPM>().getBPM();
-
-        //Start the music
-        PlayMusicTrack();
+        //Gets the bpm of a song that is placed inside the returnBPM component of an object. Only if we have it set to 0.
+        if (songBpm == 0)
+        {
+            songBpm = musicManager.GetComponent<returnBPM>().getBPM();
+        }
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        //determine how many seconds since the song started
-        songPosition = (float)(AudioSettings.dspTime - dspSongTime - firstBeatOffset);
+        if (startBpmCounter)
+        {
+            //determine how many seconds since the song started
+            songPosition = (float)(AudioSettings.dspTime - dspSongTime - firstBeatOffset);
 
-        //determine how many beats since the song started
-        songPositionInBeats = songPosition / secPerBeat;
+            //determine how many beats since the song started
+            songPositionInBeats = songPosition / secPerBeat;
+        }
     }
 
-    void PlayMusicTrack()
+    public void PlayMusicTrack()
     {
         for (int i = 0; i < audioSources.Count; i++)
         {
             audioSources[i].clip = musicTracks[i];
             audioSources[i].Play();
         }
+    }
+
+    public void startMusicCounter()
+    {
+        //Record the time when the music starts
+        dspSongTime = (float)AudioSettings.dspTime;
+
+        startBpmCounter = true;
     }
 }

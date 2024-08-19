@@ -16,6 +16,7 @@ public class OutwardZoom : MonoBehaviour
     [Range(0.5f, 5f)][SerializeField] float minZoom;
     [Range(5f, 100f)][SerializeField] float maxZoom;
 
+    private int numberMachinesActivated = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,8 @@ public class OutwardZoom : MonoBehaviour
 
     public void ZoomOut(float zoomOutStrength)
     {
-        cam.orthographicSize += zoomOutStrength;
+        //Instead of moving the camera out a flat value, have it only consistently grow if you can hit all the keys properly. Divide the strength by the number of currently activated machines.
+        cam.orthographicSize += Mathf.Clamp(zoomOutStrength / (numberMachinesActivated * 0.25f), 0.1f, 0.5f); //Divide by 4 beats per bar. Don't want to hinder the growth by having a lot of machines that arent pressed often enough to keep growing.
         CheckObjects();
     }
 
@@ -42,10 +44,11 @@ public class OutwardZoom : MonoBehaviour
         #region Check what objects are within the camera frustum, and if they need to have their keys activated.
         foreach(HitDetect machine in machines)
         {
-            if (CameraExtensions.IsObjectVisible(cam, machine.transform.position, -0.03f))
+            if (CameraExtensions.IsObjectVisible(cam, machine.transform.position, -0.05f))
             {
                 //Set the machine to be active.
                 machine.activated = true;
+                numberMachinesActivated++;
             }
         }
         #endregion

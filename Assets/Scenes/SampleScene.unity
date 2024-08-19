@@ -484,7 +484,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -581,7 +585,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -601,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -617,11 +625,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.83536
+      value: -6.217
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2076201
+      value: 2.364
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.z
@@ -693,7 +701,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -721,7 +733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -929,7 +941,7 @@ MonoBehaviour:
   - {fileID: 1830726812}
   - {fileID: 2122717436}
   menu: {fileID: 791688228}
-  shrinkSpeed: 0.01
+  shrinkSpeed: 0.02
   minZoom: 1
   maxZoom: 20
 --- !u!114 &519420034
@@ -1188,6 +1200,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1957028877}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayMusicTrack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1957028877}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: startMusicCounter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &538415033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,7 +1428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -1600,7 +1640,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -1636,7 +1680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.09536
+      value: -7.3
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1903,7 +1947,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -2095,7 +2143,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -2289,7 +2341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1408683712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2902,11 +2954,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5924217906160237929, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -3018,7 +3074,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -3298,8 +3358,8 @@ MonoBehaviour:
   - {fileID: 1957028878}
   musicTracks:
   - {fileID: 8300000, guid: 854866afdb6244a92a3d2d9cbd15a930, type: 3}
-  firstBeatOffset: 0.475
-  songBpm: 0
+  firstBeatOffset: 0.1
+  songBpm: 80
   songPositionInBeats: 0
 --- !u!82 &1957028878
 AudioSource:
@@ -3315,7 +3375,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.241
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3528,7 +3588,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -3548,7 +3612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -3564,11 +3628,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.3553596
+      value: -4.536
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1976202
+      value: 1.886
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3655,7 +3719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -12.459999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5435189068895807549, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_fontSize
@@ -3664,6 +3728,10 @@ PrefabInstance:
     - target: {fileID: 5435189068895807549, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_fontSizeBase
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6679093215919279735, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Name
@@ -3695,7 +3763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
-      value: 0.3
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: cameraToZoomOutOnHit
