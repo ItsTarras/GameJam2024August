@@ -10,7 +10,6 @@ public class Menu : MonoBehaviour
 
     public void Play() {
         ship.SetActive(true); // Show the ship
-        print("playing");
         paused = false; // control camera zoom, red circle closing, key prompts
         firstMachine.activated = true; // activate the ship intelligence
         gameObject.SetActive(false); // hide the menu
@@ -22,7 +21,6 @@ public class Menu : MonoBehaviour
 
     internal void Pause()
     {
-        print("pausing");
         paused = true;
     }
 

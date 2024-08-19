@@ -3244,7 +3244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20339b8fa41de0e44915a4aaf1ab95ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetClip: {fileID: 8300000, guid: 5094dd4293649bc45b241c7dc0322067, type: 3}
+  targetClip: {fileID: 8300000, guid: 854866afdb6244a92a3d2d9cbd15a930, type: 3}
 --- !u!114 &1957028877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3261,7 +3261,7 @@ MonoBehaviour:
   audioSources:
   - {fileID: 1957028878}
   musicTracks:
-  - {fileID: 8300000, guid: 5094dd4293649bc45b241c7dc0322067, type: 3}
+  - {fileID: 8300000, guid: 854866afdb6244a92a3d2d9cbd15a930, type: 3}
   firstBeatOffset: 0.475
   songBpm: 0
   songPositionInBeats: 0
