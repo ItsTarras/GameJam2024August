@@ -34,7 +34,7 @@ public class OutwardZoom : MonoBehaviour
         while (true)
         {
 
-            cam.orthographicSize -= Time.deltaTime * Time.deltaTime * soundManager.songBpm * cam.orthographicSize * shrinkSpeed;
+            cam.orthographicSize -= Time.deltaTime * Time.deltaTime * soundManager.songBpm * cam.orthographicSize * 1.2f * shrinkSpeed;
             yield return null;
         }
     }

@@ -27,7 +27,7 @@ public class HitDetect : MonoBehaviour
 
 
     //Boolean declarations.
-    private bool hitThisRound = false;
+    private bool hitThisRound = true; // For the initial beat, as to not startle the player upon activation.
     private bool playedError = false;
     public bool activated = false;
 
