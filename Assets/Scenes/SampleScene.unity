@@ -2207,8 +2207,10 @@ MonoBehaviour:
   - {fileID: 1830726812}
   - {fileID: 2122717436}
   menu: {fileID: 791688228}
+  credits: {fileID: 1688537496}
   shrinkSpeed: 0.005
   minZoom: 1
+  winRadius: 25
   maxZoom: 30
 --- !u!114 &519420034
 MonoBehaviour:

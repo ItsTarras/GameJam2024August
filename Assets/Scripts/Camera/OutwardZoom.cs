@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,9 +13,11 @@ public class OutwardZoom : MonoBehaviour
 
     private Camera cam;
     [SerializeField] Menu menu;
+    [SerializeField] GameObject credits;
     [Range(0f, 1f)][SerializeField] float shrinkSpeed;
-    [Range(0.5f, 5f)][SerializeField] float minZoom;
-    [Range(5f, 100f)][SerializeField] float maxZoom;
+    [Range(0.5f, 50f)][SerializeField] float minZoom;
+    [Range(0.5f, 50f)][SerializeField] float winRadius;
+    [Range(0.5f, 50f)][SerializeField] float maxZoom;
 
     private int numberMachinesActivated = 1;
     // Start is called before the first frame update
@@ -43,6 +46,19 @@ public class OutwardZoom : MonoBehaviour
         // print($"Zooming out by {modifiedDelta}");
         cam.orthographicSize += Mathf.Clamp(modifiedDelta, 0.1f, 3f); 
         CheckObjects();
+        CheckWinCondition();
+    }
+
+    private void CheckWinCondition()
+    {
+        if (cam.orthographicSize > winRadius) {
+            menu.paused = true;
+            foreach(HitDetect machine in machines)
+            {
+                machine.activated = false;
+            }
+            credits.SetActive(true);
+        }
     }
 
     public void CheckObjects()
