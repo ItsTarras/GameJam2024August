@@ -279,8 +279,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -390,9 +390,10 @@ MonoBehaviour:
   soundtrackContribution: {fileID: 4438505770569169179}
   key: 120
   zoomOutStrength: 0.05
-  targetBeatToHit: 0
+  firstBeat: 0
+  beatsBetweenRepetions: 0
+  beatsOfDelay: 0
   forgiveness: 0.3
-  targetScale: 2
   keyToHitImage: {fileID: 6778582289202707674}
   activated: 0
 --- !u!82 &6083498531816153943
@@ -711,7 +712,7 @@ RectTransform:
   m_GameObject: {fileID: 6778582289202707674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalScale: {x: 0.003, y: 0.003, z: 0.003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3528168978322333905}
@@ -720,7 +721,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 30}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1848667245281558098
 CanvasRenderer:
@@ -750,7 +751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 248df33a68ad2ed4ab3123dc7643efac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
