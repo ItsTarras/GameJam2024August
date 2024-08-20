@@ -1,12 +1,13 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InteractionPrompt : MonoBehaviour
 {
     public HitDetect parentMachine;
     public GameObject anchor;
     private Camera mainCamera;
+    [SerializeField] Transform ring;
+    float ringSize;
 
     void Start()
     {
@@ -14,14 +15,15 @@ public class InteractionPrompt : MonoBehaviour
 
         // Update text to reflect machine settings
         transform.GetComponentInChildren<TMP_Text>().SetText(parentMachine.key.ToString());
+        ringSize = ring.localScale.x;
     }
 
     void Update()
     {
         if (parentMachine.activated) {
             // Shrink red circle
-            float circleScale = parentMachine.GetPercentageToNextBeat();
-            anchor.GetComponent<SpriteRenderer>().material.SetFloat("_Scale", circleScale);
+            float circleScale = parentMachine.GetPercentageToNextBeat() * ringSize;
+            ring.localScale = new Vector3(circleScale, circleScale, circleScale);
         }
 
         // Match button position to machine

@@ -52,7 +52,6 @@ public class HitDetect : MonoBehaviour
     {
         if (!activated) return;
 
-        keyToHitImage.GetComponent<InteractionPrompt>().anchor.SetActive(!menu.paused);
         keyToHitImage.SetActive(!menu.paused);
 
         if (menu.paused) return;
