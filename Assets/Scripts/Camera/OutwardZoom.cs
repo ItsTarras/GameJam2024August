@@ -69,7 +69,9 @@ public class OutwardZoom : MonoBehaviour
         #region Check what objects are within the camera frustum, and if they need to have their keys activated.
         foreach(HitDetect machine in machines)
         {
-            if (Vector2.Distance(transform.position, machine.keyToHitImage.GetComponent<InteractionPrompt>().anchor.transform.position) < cam.orthographicSize && !machine.activated)
+            float width = cam.orthographicSize * cam.aspect;
+            float radius = ((width - cam.orthographicSize) / 2) + cam.orthographicSize;
+            if (Vector2.Distance(transform.position, machine.keyToHitImage.GetComponent<InteractionPrompt>().anchor.transform.position) < radius && !machine.activated)
             {
                 //Set the machine to be active.
                 machine.Activate();
