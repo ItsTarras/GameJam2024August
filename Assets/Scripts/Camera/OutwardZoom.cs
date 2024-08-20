@@ -12,7 +12,7 @@ public class OutwardZoom : MonoBehaviour
 
     private Camera cam;
     [SerializeField] Menu menu;
-    [Range(0.01f, 1f)][SerializeField] float shrinkSpeed;
+    [Range(0f, 1f)][SerializeField] float shrinkSpeed;
     [Range(0.5f, 5f)][SerializeField] float minZoom;
     [Range(5f, 100f)][SerializeField] float maxZoom;
 
