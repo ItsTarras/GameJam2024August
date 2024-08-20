@@ -42,6 +42,10 @@ public class HitDetect : MonoBehaviour
         cameraToZoomOutOnHit = Camera.main.GetComponent<OutwardZoom>();
         // Technically bad practice to assume singletons like this but I'm not assigning for every single machine
         soundManager = FindAnyObjectByType<SoundManager>();
+        if (TryGetComponent<Animator>(out animator))
+        {
+            animator.speed = 0;
+        }
     }
 
     void Update()
@@ -105,7 +109,6 @@ public class HitDetect : MonoBehaviour
                 supressPlayingError = true;
                 soundtrackContribution.mute = false;
                 if (TryGetComponent<Animator>(out animator)) {
-                    // print($"starting animation for {gameObject.name}");
                     animator.speed = 1;
                 }
                 //Reset the variables.
