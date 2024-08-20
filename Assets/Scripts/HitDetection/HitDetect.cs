@@ -10,7 +10,7 @@ public class HitDetect : MonoBehaviour
     [SerializeField] public AudioSource soundtrackContribution;
     [SerializeField] public KeyCode key;
     OutwardZoom cameraToZoomOutOnHit;
-    [Range(0.05f, 1f)][SerializeField] private float zoomOutStrength;
+    [Range(0.05f, 5f)][SerializeField] private float zoomOutStrength;
 
     // Beat matching config
     public int targetBeatToHit; // hit the key every x beats
@@ -46,72 +46,73 @@ public class HitDetect : MonoBehaviour
         keyToHitImage.GetComponent<InteractionPrompt>().anchor.SetActive(!menu.paused);
         keyToHitImage.SetActive(!menu.paused);
 
-        if(activated && !menu.paused)
+        if (!activated || menu.paused) return;
+
+        // For every `cooldown` beat, if you time it properly,
+        // a sound effect will play. (The hitConfirmSoundEffect variable.)
+        bool beatCanBeHit = 
+            soundManager.songPositionInBeats % targetBeatToHit > targetBeatToHit - forgiveness ||
+            soundManager.songPositionInBeats % targetBeatToHit < forgiveness;
+
+        if (beatCanBeHit)
         {
-            // For every `cooldown` beat, if you time it properly,
-            // a sound effect will play. (The hitConfirmSoundEffect variable.)
-            if (soundManager.songPositionInBeats % targetBeatToHit > targetBeatToHit - forgiveness ||
-                soundManager.songPositionInBeats % targetBeatToHit < forgiveness)
-            {
-                // We're inside the window to hit the beat
+            // We're inside the window to hit the beat
 
-                //Reset the error variable at the start of this new cycle.
-                supressPlayingError = false;
+            //Reset the error variable at the start of this new cycle.
+            supressPlayingError = false;
 
-                #region detect the beat hitting
+            #region detect the beat hitting
+            if (Input.GetKeyDown(key) && hitThisRound == false) {
                 //They managed to hit the beat.
-                if (Input.GetKeyDown(key) && hitThisRound == false)
-                {
-                    hitConfirmSoundEffect.Play();
-                    hitThisRound = true;
+                hitConfirmSoundEffect.Play();
+                hitThisRound = true;
 
-                    //Apply the camera zoom out effect if we hit this.
+                //Apply the camera zoom out effect if we hit this.
 
-                    cameraToZoomOutOnHit.ZoomOut(zoomOutStrength);
-                }
-                #endregion
-
-                #region animation
-                //Animate the key that is being hit.
-                if (soundManager.songPositionInBeats % targetBeatToHit >= targetBeatToHit - forgiveness)
-                {
-                    keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(targetScale, targetScale, targetScale), 50f);
-                }
-                else
-                {
-                    keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(1, 1, 1), 25f * forgiveness);
-                }
-                #endregion
-            } else {
-                // We're outside the window to hit the beat
-                #region detect missed beats
-                if (!hitThisRound)
-                {
-                    if (!supressPlayingError)
-                    {
-                        //We failed to hit the beat.
-                        //THIS AREA IS WHERE WE WANT TO ALTER WHAT HAPPENS WHEN WE MISS A BEAT! Maybe reference the camera, and zoom it in slightly?
-                        beatMissedSoundEffect.Play();
-                        soundtrackContribution.mute = true;
-                        if (TryGetComponent<Animator>(out animator)) {
-                            animator.speed = 0;
-                        }
-                        supressPlayingError = true;
-                    }
-                } else {
-                    //We hit the beat this round, so don't play the error. Just set it to true so it doesn't play in this cycle.
-                    //Do not play the error sound.
-                    supressPlayingError = true;
-                    soundtrackContribution.mute = false;
-                    if (TryGetComponent<Animator>(out animator)) {
-                        print($"starting animation for {gameObject.name}");
-                        animator.speed = 1;
-                    }
-                    //Reset the variables.
-                    hitThisRound = false;
-                }
-                #endregion
+                cameraToZoomOutOnHit.ZoomOut(zoomOutStrength);
             }
+            #endregion
+
+            #region animation
+            //Animate the key that is being hit.
+            if (soundManager.songPositionInBeats % targetBeatToHit >= targetBeatToHit - forgiveness)
+            {
+                keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(targetScale, targetScale, targetScale), 50f);
+            }
+            else
+            {
+                keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(1, 1, 1), 25f * forgiveness);
+            }
+            #endregion
+        } else {
+            // We're outside the window to hit the beat
+            #region detect missed beats
+            if (!hitThisRound)
+            {
+                if (!supressPlayingError)
+                {
+                    //We failed to hit the beat.
+                    //THIS AREA IS WHERE WE WANT TO ALTER WHAT HAPPENS WHEN WE MISS A BEAT! Maybe reference the camera, and zoom it in slightly?
+                    beatMissedSoundEffect.Play();
+                    soundtrackContribution.mute = true;
+                    if (TryGetComponent<Animator>(out animator)) {
+                        animator.speed = 0;
+                    }
+                    supressPlayingError = true;
+                }
+            } else {
+                //We hit the beat this round, so don't play the error. Just set it to true so it doesn't play in this cycle.
+                //Do not play the error sound.
+                supressPlayingError = true;
+                soundtrackContribution.mute = false;
+                if (TryGetComponent<Animator>(out animator)) {
+                    print($"starting animation for {gameObject.name}");
+                    animator.speed = 1;
+                }
+                //Reset the variables.
+                hitThisRound = false;
+            }
+            #endregion
         }
     }
 
