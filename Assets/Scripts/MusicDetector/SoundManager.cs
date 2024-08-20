@@ -68,6 +68,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMusicTracks()
     {
+        // BUG: Playing a slash sound instead of one of the audio tracks
         for (int i = 0; i < audioSources.Count; i++)
         {
             audioSources[i].Play();

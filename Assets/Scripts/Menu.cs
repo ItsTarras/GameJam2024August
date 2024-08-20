@@ -16,8 +16,8 @@ public class Menu : MonoBehaviour
     public void Play() {
         ship.SetActive(true); // Show the ship
         paused = false; // control camera zoom, red circle closing, key prompts
-        firstMachine.Activate(); // activate the ship intelligence
-        soundManager.PlayMusicTracks();
+        zoomManager.CheckObjects(); // activate machines in camera zone
+        soundManager.PlayMusicTracks(); // start music
         gameObject.SetActive(false); // hide the menu
     }
 

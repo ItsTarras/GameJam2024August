@@ -41,7 +41,7 @@ public class OutwardZoom : MonoBehaviour
 
         float modifiedDelta = zoomOutStrength / (numberMachinesActivated * 0.25f);
         // print($"Zooming out by {modifiedDelta}");
-        cam.orthographicSize += Mathf.Clamp(modifiedDelta, 0.1f, 0.5f); 
+        cam.orthographicSize += Mathf.Clamp(modifiedDelta, 0.1f, 3f); 
         CheckObjects();
     }
 
@@ -50,7 +50,7 @@ public class OutwardZoom : MonoBehaviour
         #region Check what objects are within the camera frustum, and if they need to have their keys activated.
         foreach(HitDetect machine in machines)
         {
-            if (CameraExtensions.IsObjectVisible(cam, machine.transform.position, -0.05f) && !machine.activated)
+            if (Vector2.Distance(transform.position, machine.keyToHitImage.GetComponent<InteractionPrompt>().anchor.transform.position) < cam.orthographicSize && !machine.activated)
             {
                 //Set the machine to be active.
                 machine.Activate();

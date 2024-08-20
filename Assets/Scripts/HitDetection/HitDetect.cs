@@ -27,7 +27,7 @@ public class HitDetect : MonoBehaviour
     float targetScale;
 
     //Key image.
-    [SerializeField] private GameObject keyToHitImage;
+    [SerializeField] public GameObject keyToHitImage;
 
 
     //Boolean declarations.
