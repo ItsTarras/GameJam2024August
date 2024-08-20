@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Tutorial : MonoBehaviour
@@ -5,6 +6,11 @@ public class Tutorial : MonoBehaviour
     [SerializeField] HitDetect firstMachine;
     [SerializeField] OutwardZoom zoomManager;
     [SerializeField] Menu menu;
+    [SerializeField] TMP_Text text;
+    void Start() {
+        text.SetText(firstMachine.key.ToString());
+    }
+
     void Update() {
         if (Input.GetKeyDown(firstMachine.key))
             {
