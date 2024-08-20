@@ -6650,8 +6650,8 @@ MonoBehaviour:
   - {fileID: 1568237035}
   - {fileID: 1500500559}
   - {fileID: 2121440481}
-  - {fileID: 2012689688}
-  - {fileID: 2074327649}
+  - {fileID: 2012689689}
+  - {fileID: 2074327652}
   - {fileID: 1656209330}
   - {fileID: 1830726815}
   - {fileID: 2122717439}
@@ -6914,9 +6914,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ab9b710195964478eef1ca8cc4866c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &2012689688 stripped
+--- !u!82 &2012689689 stripped
 AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
   m_PrefabInstance: {fileID: 130736184}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2074327647 stripped
@@ -6930,11 +6930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ab9b710195964478eef1ca8cc4866c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &2074327649 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
-  m_PrefabInstance: {fileID: 756980554}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &2074327650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7008,6 +7003,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &2074327652 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+  m_PrefabInstance: {fileID: 756980554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096839355
 GameObject:
   m_ObjectHideFlags: 0

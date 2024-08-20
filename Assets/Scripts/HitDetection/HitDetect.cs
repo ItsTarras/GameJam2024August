@@ -132,7 +132,7 @@ public class HitDetect : MonoBehaviour
 
     public void HitBeat()
     {
-        hitConfirmSoundEffect.Play();
+        // hitConfirmSoundEffect.Play();
         hitThisRound = true;
         cameraToZoomOutOnHit.ZoomOut(zoomOutStrength);
     }
