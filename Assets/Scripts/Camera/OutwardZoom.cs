@@ -9,7 +9,7 @@ public class OutwardZoom : MonoBehaviour
     public SoundManager soundManager;
 
     //Get all the game objects that we will be trying to view within the camera viewport. If they are within the camera viewport, activate it using its public method (should get one).
-    public List<HitDetect> machines = new List<HitDetect>();
+    public List<HitDetect> machines = new();
 
     private Camera cam;
     [SerializeField] Animator[] lights;
@@ -18,7 +18,7 @@ public class OutwardZoom : MonoBehaviour
     [Range(0f, 1f)][SerializeField] float shrinkSpeed;
     [Range(0.5f, 50f)][SerializeField] float minZoom;
     [Range(0.5f, 50f)][SerializeField] float winRadius;
-    [Range(0.5f, 50f)][SerializeField] float maxZoom;
+    [Range(0.5f, 100f)][SerializeField] float maxZoom;
 
     private int numberMachinesActivated = 1;
     // Start is called before the first frame update

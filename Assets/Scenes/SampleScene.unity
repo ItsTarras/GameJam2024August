@@ -2307,8 +2307,8 @@ MonoBehaviour:
   credits: {fileID: 1688537496}
   shrinkSpeed: 0.005
   minZoom: 1
-  winRadius: 30
-  maxZoom: 40
+  winRadius: 50
+  maxZoom: 60
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5621,12 +5621,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 791688228}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -6659,7 +6667,7 @@ MonoBehaviour:
   - {fileID: 1656209330}
   - {fileID: 1830726815}
   - {fileID: 2122717439}
-  firstBeatOffset: 0.1
+  firstBeatOffset: 5.25
   songBpm: 80
   songPositionInBeats: 0
 --- !u!82 &1957028878
