@@ -26,6 +26,13 @@ public class OutwardZoom : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.F12))
+        {
+            ScreenCapture.CaptureScreenshot("screenshot.png");
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
