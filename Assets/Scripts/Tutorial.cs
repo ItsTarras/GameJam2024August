@@ -15,7 +15,8 @@ public class Tutorial : MonoBehaviour
     void Update() {
         if (Input.GetKeyDown(firstMachine.key))
             {
-                firstMachine.HitBeat();
+                firstMachine.hitThisRound = true;
+
                 EndTutorial();
             }
     }

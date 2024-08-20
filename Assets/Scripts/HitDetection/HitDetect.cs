@@ -30,7 +30,7 @@ public class HitDetect : MonoBehaviour
 
 
     //Boolean declarations.
-    private bool hitThisRound = true; // For the initial beat, as to not startle the player upon activation.
+    public bool hitThisRound = true; // For the initial beat, as to not startle the player upon activation.
     private bool supressPlayingError = false;
     public bool activated = false;
 

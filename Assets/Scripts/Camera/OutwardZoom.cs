@@ -15,10 +15,9 @@ public class OutwardZoom : MonoBehaviour
     [SerializeField] Animator[] lights;
     [SerializeField] Menu menu;
     [SerializeField] GameObject credits;
-    [Range(0f, 1f)][SerializeField] float shrinkSpeed;
+    [SerializeField] float shrinkSpeed;
     [Range(0.5f, 50f)][SerializeField] float minZoom;
     [Range(0.5f, 50f)][SerializeField] float winRadius;
-    [Range(0.5f, 100f)][SerializeField] float maxZoom;
 
     private int numberMachinesActivated = 1;
     // Start is called before the first frame update
@@ -31,8 +30,8 @@ public class OutwardZoom : MonoBehaviour
     void Update()
     {
         if (!menu.paused) {
-            cam.orthographicSize -= Time.deltaTime * Time.deltaTime * soundManager.songBpm * cam.orthographicSize * shrinkSpeed;
-            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
+            cam.orthographicSize -= Time.deltaTime * cam.orthographicSize * shrinkSpeed;
+            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, winRadius + 10f);
         }
     }
 
@@ -43,9 +42,9 @@ public class OutwardZoom : MonoBehaviour
         //Divide by 4 beats per bar. Don't want to hinder the growth by having a lot of machines
         // that arent pressed often enough to keep growing.
 
-        float modifiedDelta = zoomOutStrength / (numberMachinesActivated * 0.25f);
+        float modifiedDelta = zoomOutStrength / numberMachinesActivated;
         // print($"Zooming out by {modifiedDelta}");
-        cam.orthographicSize += Mathf.Clamp(modifiedDelta, 0.1f, 3f); 
+        cam.orthographicSize += modifiedDelta; 
         CheckObjects();
         CheckWinCondition();
     }
