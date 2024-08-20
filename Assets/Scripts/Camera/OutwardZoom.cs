@@ -27,10 +27,10 @@ public class OutwardZoom : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!menu.paused) {
-            cam.orthographicSize -= Time.deltaTime * cam.orthographicSize * shrinkSpeed;
+            cam.orthographicSize *= shrinkSpeed;
             cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, winRadius + 10f);
         }
     }
