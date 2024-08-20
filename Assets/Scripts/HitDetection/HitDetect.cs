@@ -31,6 +31,8 @@ public class HitDetect : MonoBehaviour
     private bool supressPlayingError = false;
     public bool activated = false;
 
+    private Animator animator;
+
     private void Start()
     {
         cameraToZoomOutOnHit = Camera.main.GetComponent<OutwardZoom>();
@@ -91,16 +93,20 @@ public class HitDetect : MonoBehaviour
                         //THIS AREA IS WHERE WE WANT TO ALTER WHAT HAPPENS WHEN WE MISS A BEAT! Maybe reference the camera, and zoom it in slightly?
                         beatMissedSoundEffect.Play();
                         soundtrackContribution.mute = true;
+                        if (TryGetComponent<Animator>(out animator)) {
+                            animator.speed = 0;
+                        }
                         supressPlayingError = true;
                     }
-                }
-                else
-                {
+                } else {
                     //We hit the beat this round, so don't play the error. Just set it to true so it doesn't play in this cycle.
                     //Do not play the error sound.
                     supressPlayingError = true;
                     soundtrackContribution.mute = false;
-
+                    if (TryGetComponent<Animator>(out animator)) {
+                        print($"starting animation for {gameObject.name}");
+                        animator.speed = 1;
+                    }
                     //Reset the variables.
                     hitThisRound = false;
                 }
