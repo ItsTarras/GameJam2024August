@@ -59,7 +59,7 @@ public class HitDetect : MonoBehaviour
         bool beatCanBeHit = 
             GetNumBeatsToNextBeat() < forgiveness ||
             GetNumBeatsToNextBeat() > beatsBetweenRepetions - forgiveness;
-        print($"Beat can be hit: {beatCanBeHit}");
+        // print($"Beat can be hit: {beatCanBeHit}");
 
         if (beatCanBeHit)
         {
@@ -104,7 +104,7 @@ public class HitDetect : MonoBehaviour
                 supressPlayingError = true;
                 soundtrackContribution.mute = false;
                 if (TryGetComponent<Animator>(out animator)) {
-                    print($"starting animation for {gameObject.name}");
+                    // print($"starting animation for {gameObject.name}");
                     animator.speed = 1;
                 }
                 //Reset the variables.
@@ -134,11 +134,11 @@ public class HitDetect : MonoBehaviour
     }
 
     internal float GetNumBeatsToNextBeat() {
-        if (soundManager.songPositionInBeats < firstBeat) {
+        if (soundManager.songPositionInBeats < (firstBeat + beatsOfDelay)) {
             // Haven't gotten to first beat yet
-            return firstBeat - soundManager.songPositionInBeats;
+            return firstBeat + beatsOfDelay - soundManager.songPositionInBeats;
         }
-        float beatsIntoInterval = (soundManager.songPositionInBeats - firstBeat) % beatsBetweenRepetions;
+        float beatsIntoInterval = (soundManager.songPositionInBeats - (firstBeat + beatsOfDelay)) % beatsBetweenRepetions;
         return beatsBetweenRepetions - beatsIntoInterval;
     }
 
