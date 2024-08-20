@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] OutwardZoom zoomManager;
     [SerializeField] SoundManager soundManager;
     [SerializeField] GameObject ship;
-    [SerializeField] HitDetect firstMachine;
+    [SerializeField] GameObject tutorial;
     [HideInInspector] public bool paused = true;
 
     public void Start() {
@@ -15,8 +14,7 @@ public class Menu : MonoBehaviour
 
     public void Play() {
         ship.SetActive(true); // Show the ship
-        paused = false; // control camera zoom, red circle closing, key prompts
-        zoomManager.CheckObjects(); // activate machines in camera zone
+        tutorial.SetActive(true); // and the tutorial
         soundManager.PlayMusicTracks(); // start music
         gameObject.SetActive(false); // hide the menu
     }

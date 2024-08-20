@@ -126,7 +126,7 @@ public class HitDetect : MonoBehaviour
         supressPlayingError = true;
     }
 
-    private void HitBeat()
+    public void HitBeat()
     {
         hitConfirmSoundEffect.Play();
         hitThisRound = true;
