@@ -28,7 +28,7 @@ public class HitDetect : MonoBehaviour
 
     //Boolean declarations.
     private bool hitThisRound = true; // For the initial beat, as to not startle the player upon activation.
-    private bool playedError = false;
+    private bool supressPlayingError = false;
     public bool activated = false;
 
     private void Start()
@@ -51,8 +51,10 @@ public class HitDetect : MonoBehaviour
             if (soundManager.songPositionInBeats % targetBeatToHit > targetBeatToHit - forgiveness ||
                 soundManager.songPositionInBeats % targetBeatToHit < forgiveness)
             {
+                // We're inside the window to hit the beat
+
                 //Reset the error variable at the start of this new cycle.
-                playedError = false;
+                supressPlayingError = false;
 
                 #region detect the beat hitting
                 //They managed to hit the beat.
@@ -78,27 +80,26 @@ public class HitDetect : MonoBehaviour
                     keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(1, 1, 1), 25f * forgiveness);
                 }
                 #endregion
-            }
-
-            //We've just passed the opportunity to hit the beat.
-            else
-            {
+            } else {
+                // We're outside the window to hit the beat
                 #region detect missed beats
-                //We failed to hit the beat.
                 if (!hitThisRound)
                 {
-                    if (!playedError)
+                    if (!supressPlayingError)
                     {
+                        //We failed to hit the beat.
                         //THIS AREA IS WHERE WE WANT TO ALTER WHAT HAPPENS WHEN WE MISS A BEAT! Maybe reference the camera, and zoom it in slightly?
                         beatMissedSoundEffect.Play();
-                        playedError = true;
+                        soundtrackContribution.mute = true;
+                        supressPlayingError = true;
                     }
                 }
                 else
                 {
                     //We hit the beat this round, so don't play the error. Just set it to true so it doesn't play in this cycle.
                     //Do not play the error sound.
-                    playedError = true;
+                    supressPlayingError = true;
+                    soundtrackContribution.mute = false;
 
                     //Reset the variables.
                     hitThisRound = false;
@@ -113,7 +114,7 @@ public class HitDetect : MonoBehaviour
         float beatsToNextBeat = targetBeatToHit - soundManager.songPositionInBeats % targetBeatToHit;
         return beatsToNextBeat / targetBeatToHit;
     }
-    
+
     public void Activate() {
         activated = true;
         soundtrackContribution.mute = false;

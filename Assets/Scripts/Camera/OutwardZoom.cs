@@ -40,7 +40,7 @@ public class OutwardZoom : MonoBehaviour
         // that arent pressed often enough to keep growing.
 
         float modifiedDelta = zoomOutStrength / (numberMachinesActivated * 0.25f);
-        print($"Zooming out by {modifiedDelta}");
+        // print($"Zooming out by {modifiedDelta}");
         cam.orthographicSize += Mathf.Clamp(modifiedDelta, 0.1f, 0.5f); 
         CheckObjects();
     }
