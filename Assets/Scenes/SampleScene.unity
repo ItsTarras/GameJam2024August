@@ -6667,7 +6667,7 @@ MonoBehaviour:
   - {fileID: 1656209330}
   - {fileID: 1830726815}
   - {fileID: 2122717439}
-  firstBeatOffset: 5.25
+  firstBeatOffset: 2.625
   songBpm: 80
   songPositionInBeats: 0
 --- !u!82 &1957028878
