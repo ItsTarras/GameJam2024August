@@ -12,6 +12,7 @@ public class OutwardZoom : MonoBehaviour
     public List<HitDetect> machines = new List<HitDetect>();
 
     private Camera cam;
+    [SerializeField] Animator[] lights;
     [SerializeField] Menu menu;
     [SerializeField] GameObject credits;
     [Range(0f, 1f)][SerializeField] float shrinkSpeed;
@@ -58,6 +59,9 @@ public class OutwardZoom : MonoBehaviour
                 machine.activated = false;
             }
             credits.SetActive(true);
+            foreach(Animator light in lights) {
+                light.Play("Base Layer.light"); // emerge
+            }
         }
     }
 

@@ -2206,12 +2206,22 @@ MonoBehaviour:
   - {fileID: 161488210}
   - {fileID: 1830726812}
   - {fileID: 2122717436}
+  lights:
+  - {fileID: 1185731884}
+  - {fileID: 1037598679}
+  - {fileID: 153464962}
+  - {fileID: 90481223}
+  - {fileID: 1512562441}
+  - {fileID: 519391115}
+  - {fileID: 347283403}
+  - {fileID: 122362623}
+  - {fileID: 658273616}
   menu: {fileID: 791688228}
   credits: {fileID: 1688537496}
   shrinkSpeed: 0.005
   minZoom: 1
-  winRadius: 25
-  maxZoom: 30
+  winRadius: 10
+  maxZoom: 40
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
