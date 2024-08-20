@@ -602,12 +602,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 101
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
       value: 
       objectReference: {fileID: 791688228}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsOfDelay
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 3
@@ -615,6 +623,10 @@ PrefabInstance:
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -825,12 +837,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 273
+      value: 103
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
       value: 
       objectReference: {fileID: 791688228}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 5
@@ -838,6 +854,10 @@ PrefabInstance:
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -1132,7 +1152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 119
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
@@ -1141,6 +1161,10 @@ PrefabInstance:
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: activated
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: forgiveness
@@ -1153,6 +1177,10 @@ PrefabInstance:
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -1954,7 +1982,7 @@ MonoBehaviour:
   - {fileID: 1830726812}
   - {fileID: 2122717436}
   menu: {fileID: 791688228}
-  shrinkSpeed: 0.02
+  shrinkSpeed: 0.005
   minZoom: 1
   maxZoom: 20
 --- !u!114 &519420034
@@ -2618,12 +2646,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 114
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
       value: 
       objectReference: {fileID: 791688228}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: forgiveness
       value: 0.3
@@ -2643,6 +2675,10 @@ PrefabInstance:
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: cameraZoomOutStrength
@@ -2830,7 +2866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 32
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
@@ -3655,12 +3691,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 114
+      value: 107
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
       value: 
       objectReference: {fileID: 791688228}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 5
@@ -3668,6 +3708,10 @@ PrefabInstance:
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -3845,9 +3889,21 @@ PrefabInstance:
       value: Co2 Exchanger
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: key
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
       value: 
       objectReference: {fileID: 791688228}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsOfDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 2
@@ -3855,6 +3911,10 @@ PrefabInstance:
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -5237,7 +5297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 275
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
@@ -5595,12 +5655,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 276
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
       value: 
       objectReference: {fileID: 791688228}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 5
@@ -5608,6 +5672,10 @@ PrefabInstance:
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -6346,12 +6414,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 97
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
       value: 
       objectReference: {fileID: 791688228}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: targetBeatToHit
       value: 7
@@ -6359,6 +6431,10 @@ PrefabInstance:
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8873030165818852175, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_LocalScale.x
@@ -6583,7 +6659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: key
-      value: 101
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: menu
@@ -6598,6 +6674,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: firstBeat
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1957028877}
@@ -6607,12 +6687,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: zoomOutStrength
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: cameraToZoomOutOnHit
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
+      propertyPath: beatsBetweenRepetions
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8151830001503785687, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: cameraZoomOutStrength
       value: 0.25

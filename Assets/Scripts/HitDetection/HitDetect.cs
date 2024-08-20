@@ -13,14 +13,18 @@ public class HitDetect : MonoBehaviour
     [Range(0.05f, 5f)][SerializeField] private float zoomOutStrength;
 
     // Beat matching config
-    public int targetBeatToHit; // hit the key every x beats
+    [SerializeField] int firstBeat;
+    [SerializeField] int beatsBetweenRepetions;
+
+    // a tiny offset for if multiple machines hit the same beat and we want them played in sequence.etions;
+    [SerializeField] float beatsOfDelay;
 
     // radius around the exact timing where your input still counts
     // (eg within forgiveness beats before or after perfect still counts)
     [SerializeField] float forgiveness;
 
     //This is the original scale size we want to return to.
-    public float targetScale;
+    float targetScale;
 
     //Key image.
     [SerializeField] private GameObject keyToHitImage;
@@ -35,6 +39,8 @@ public class HitDetect : MonoBehaviour
 
     private void Start()
     {
+        targetScale = keyToHitImage.transform.localScale.x;
+
         cameraToZoomOutOnHit = Camera.main.GetComponent<OutwardZoom>();
         // Technically bad practice to assume singletons like this but I'm not assigning for every single machine
         soundManager = FindAnyObjectByType<SoundManager>();
@@ -51,8 +57,9 @@ public class HitDetect : MonoBehaviour
         // For every `cooldown` beat, if you time it properly,
         // a sound effect will play. (The hitConfirmSoundEffect variable.)
         bool beatCanBeHit = 
-            soundManager.songPositionInBeats % targetBeatToHit > targetBeatToHit - forgiveness ||
-            soundManager.songPositionInBeats % targetBeatToHit < forgiveness;
+            GetNumBeatsToNextBeat() < forgiveness ||
+            GetNumBeatsToNextBeat() > beatsBetweenRepetions - forgiveness;
+        print($"Beat can be hit: {beatCanBeHit}");
 
         if (beatCanBeHit)
         {
@@ -62,26 +69,24 @@ public class HitDetect : MonoBehaviour
             supressPlayingError = false;
 
             #region detect the beat hitting
-            if (Input.GetKeyDown(key) && hitThisRound == false) {
-                //They managed to hit the beat.
-                hitConfirmSoundEffect.Play();
-                hitThisRound = true;
-
-                //Apply the camera zoom out effect if we hit this.
-
-                cameraToZoomOutOnHit.ZoomOut(zoomOutStrength);
+            if (Input.GetKeyDown(key) && hitThisRound == false)
+            {
+                HitBeat();
             }
             #endregion
 
             #region animation
             //Animate the key that is being hit.
-            if (soundManager.songPositionInBeats % targetBeatToHit >= targetBeatToHit - forgiveness)
+            // Name your magic numbers you neanderthal
+            if (GetNumBeatsToNextBeat() < forgiveness)
             {
-                keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(targetScale, targetScale, targetScale), 50f);
+                // keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(targetScale, targetScale, targetScale), 50f);
+                keyToHitImage.transform.localScale = new Vector3(3f, 3f, 3f);
             }
             else
             {
-                keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(1, 1, 1), 25f * forgiveness);
+                // keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(1, 1, 1), 25f * forgiveness);
+                keyToHitImage.transform.localScale = new Vector3(1f, 1f, 1f);
             }
             #endregion
         } else {
@@ -91,14 +96,7 @@ public class HitDetect : MonoBehaviour
             {
                 if (!supressPlayingError)
                 {
-                    //We failed to hit the beat.
-                    //THIS AREA IS WHERE WE WANT TO ALTER WHAT HAPPENS WHEN WE MISS A BEAT! Maybe reference the camera, and zoom it in slightly?
-                    beatMissedSoundEffect.Play();
-                    soundtrackContribution.mute = true;
-                    if (TryGetComponent<Animator>(out animator)) {
-                        animator.speed = 0;
-                    }
-                    supressPlayingError = true;
+                    MissBeat();
                 }
             } else {
                 //We hit the beat this round, so don't play the error. Just set it to true so it doesn't play in this cycle.
@@ -116,10 +114,37 @@ public class HitDetect : MonoBehaviour
         }
     }
 
+    private void MissBeat()
+    {
+        //THIS AREA IS WHERE WE WANT TO ALTER WHAT HAPPENS WHEN WE MISS A BEAT! Maybe reference the camera, and zoom it in slightly?
+        beatMissedSoundEffect.Play();
+        soundtrackContribution.mute = true;
+        if (TryGetComponent<Animator>(out animator))
+        {
+            animator.speed = 0;
+        }
+        supressPlayingError = true;
+    }
+
+    private void HitBeat()
+    {
+        hitConfirmSoundEffect.Play();
+        hitThisRound = true;
+        cameraToZoomOutOnHit.ZoomOut(zoomOutStrength);
+    }
+
+    internal float GetNumBeatsToNextBeat() {
+        if (soundManager.songPositionInBeats < firstBeat) {
+            // Haven't gotten to first beat yet
+            return firstBeat - soundManager.songPositionInBeats;
+        }
+        float beatsIntoInterval = (soundManager.songPositionInBeats - firstBeat) % beatsBetweenRepetions;
+        return beatsBetweenRepetions - beatsIntoInterval;
+    }
+
     internal float GetPercentageToNextBeat()
     {
-        float beatsToNextBeat = targetBeatToHit - soundManager.songPositionInBeats % targetBeatToHit;
-        return beatsToNextBeat / targetBeatToHit;
+        return GetNumBeatsToNextBeat() / beatsBetweenRepetions;
     }
 
     public void Activate() {
