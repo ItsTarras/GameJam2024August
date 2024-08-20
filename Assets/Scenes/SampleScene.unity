@@ -590,7 +590,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Volume
@@ -821,7 +821,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_audioClip
@@ -1126,22 +1126,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408683713}
     m_Modifications:
-    - target: {fileID: 477008702216355396, guid: 69879059f6e8bff998739e3e53965638, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 8dcdb143a92ed102f894e5b1954171d7, type: 3}
-    - target: {fileID: 5924217906160237929, guid: 69879059f6e8bff998739e3e53965638, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Volume
       value: 0.2
@@ -2863,7 +2855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_audioClip
@@ -3087,7 +3079,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_audioClip
@@ -3911,7 +3903,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_audioClip
@@ -4114,7 +4106,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6083498531816153943, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_Volume
@@ -5595,7 +5587,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_audioClip
@@ -6099,7 +6091,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_audioClip
@@ -6858,7 +6850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3528168978322333905, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.809999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4438505770569169179, guid: 69879059f6e8bff998739e3e53965638, type: 3}
       propertyPath: m_audioClip

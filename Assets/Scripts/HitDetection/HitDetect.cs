@@ -48,11 +48,12 @@ public class HitDetect : MonoBehaviour
 
     void Update()
     {
-        // Toggle interaction prompt based on pause status
+        if (!activated) return;
+
         keyToHitImage.GetComponent<InteractionPrompt>().anchor.SetActive(!menu.paused);
         keyToHitImage.SetActive(!menu.paused);
 
-        if (!activated || menu.paused) return;
+        if (menu.paused) return;
 
         // For every `cooldown` beat, if you time it properly,
         // a sound effect will play. (The hitConfirmSoundEffect variable.)
