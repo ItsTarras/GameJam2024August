@@ -23,9 +23,8 @@ public class HitDetect : MonoBehaviour
     // (eg within forgiveness beats before or after perfect still counts)
     [SerializeField] float forgiveness;
 
-    //This is the original scale size we want to return to.
-    float targetScale;
-
+    [SerializeField] float targetScale = 1.25f;
+    private float normalScale;
     //Key image.
     [SerializeField] public GameObject keyToHitImage;
 
@@ -39,8 +38,7 @@ public class HitDetect : MonoBehaviour
 
     private void Start()
     {
-        targetScale = keyToHitImage.transform.localScale.x;
-
+        normalScale = keyToHitImage.transform.localScale.x;
         cameraToZoomOutOnHit = Camera.main.GetComponent<OutwardZoom>();
         // Technically bad practice to assume singletons like this but I'm not assigning for every single machine
         soundManager = FindAnyObjectByType<SoundManager>();
@@ -81,13 +79,15 @@ public class HitDetect : MonoBehaviour
             // Name your magic numbers you neanderthal
             if (GetNumBeatsToNextBeat() < forgiveness)
             {
-                // keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(targetScale, targetScale, targetScale), 50f);
-                keyToHitImage.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+                // before mark
+                keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(targetScale, targetScale, targetScale), GetNumBeatsToNextBeat() / forgiveness);
+                // keyToHitImage.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
             }
             else
             {
-                // keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(1, 1, 1), 25f * forgiveness);
-                keyToHitImage.transform.localScale = new Vector3(1f, 1f, 1f);
+                // after mark
+                keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(normalScale, normalScale, normalScale), GetBeatsSinceLastBeat() / normalScale);
+                // keyToHitImage.transform.localScale = new Vector3(1f, 1f, 1f);
             }
             #endregion
         } else {
@@ -134,13 +134,20 @@ public class HitDetect : MonoBehaviour
         cameraToZoomOutOnHit.ZoomOut(zoomOutStrength);
     }
 
+    internal float GetBeatsSinceLastBeat() {
+        if (soundManager.songPositionInBeats < (firstBeat + beatsOfDelay)) {
+            // Haven't gotten to first beat yet
+            return soundManager.songPositionInBeats;
+        }
+        return (soundManager.songPositionInBeats - (firstBeat + beatsOfDelay)) % beatsBetweenRepetions;
+    }
+
     internal float GetNumBeatsToNextBeat() {
         if (soundManager.songPositionInBeats < (firstBeat + beatsOfDelay)) {
             // Haven't gotten to first beat yet
-            return firstBeat + beatsOfDelay - soundManager.songPositionInBeats;
+            return firstBeat + beatsOfDelay - GetBeatsSinceLastBeat();
         }
-        float beatsIntoInterval = (soundManager.songPositionInBeats - (firstBeat + beatsOfDelay)) % beatsBetweenRepetions;
-        return beatsBetweenRepetions - beatsIntoInterval;
+        return beatsBetweenRepetions - GetBeatsSinceLastBeat();
     }
 
     internal float GetPercentageToNextBeat()
