@@ -2220,7 +2220,7 @@ MonoBehaviour:
   credits: {fileID: 1688537496}
   shrinkSpeed: 0.005
   minZoom: 1
-  winRadius: 10
+  winRadius: 30
   maxZoom: 40
 --- !u!114 &519420034
 MonoBehaviour:
