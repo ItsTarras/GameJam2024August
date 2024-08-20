@@ -3344,7 +3344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c82078c567806493a2c7dcc6db4bba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundManager: {fileID: 1957028877}
   ship: {fileID: 1408683711}
   tutorial: {fileID: 1465794912}
   paused: 0
@@ -5093,6 +5092,7 @@ MonoBehaviour:
   zoomManager: {fileID: 519420033}
   menu: {fileID: 791688228}
   text: {fileID: 492448897}
+  soundManager: {fileID: 1957028877}
 --- !u!114 &1465794915
 MonoBehaviour:
   m_ObjectHideFlags: 0

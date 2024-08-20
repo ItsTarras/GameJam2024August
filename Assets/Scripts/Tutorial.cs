@@ -7,6 +7,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] OutwardZoom zoomManager;
     [SerializeField] Menu menu;
     [SerializeField] TMP_Text text;
+    [SerializeField] SoundManager soundManager;
     void Start() {
         text.SetText(firstMachine.key.ToString());
     }
@@ -22,6 +23,7 @@ public class Tutorial : MonoBehaviour
     private void EndTutorial() {
         menu.paused = false; // control camera zoom, red circle closing, key prompts
         zoomManager.CheckObjects(); // activate machines in camera zone and
+        soundManager.PlayMusicTracks(); // start music
         gameObject.SetActive(false); // hide tutorial
     }
 }

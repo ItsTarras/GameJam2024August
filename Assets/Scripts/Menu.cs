@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] SoundManager soundManager;
     [SerializeField] GameObject ship;
     [SerializeField] GameObject tutorial;
     [HideInInspector] public bool paused = true;
@@ -15,7 +14,6 @@ public class Menu : MonoBehaviour
     public void Play() {
         ship.SetActive(true); // Show the ship
         tutorial.SetActive(true); // and the tutorial
-        soundManager.PlayMusicTracks(); // start music
         gameObject.SetActive(false); // hide the menu
     }
 
