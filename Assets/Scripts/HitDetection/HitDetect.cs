@@ -81,7 +81,7 @@ public class HitDetect : MonoBehaviour
             if (GetNumBeatsToNextBeat() < forgiveness)
             {
                 // keyToHitImage.transform.localScale = Vector3.Lerp(keyToHitImage.transform.localScale, new Vector3(targetScale, targetScale, targetScale), 50f);
-                keyToHitImage.transform.localScale = new Vector3(3f, 3f, 3f);
+                keyToHitImage.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
             }
             else
             {

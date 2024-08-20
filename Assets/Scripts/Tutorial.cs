@@ -23,7 +23,7 @@ public class Tutorial : MonoBehaviour
     private void EndTutorial() {
         menu.paused = false; // control camera zoom, red circle closing, key prompts
         zoomManager.CheckObjects(); // activate machines in camera zone and
-        soundManager.PlayMusicTracks(); // start music
+        soundManager.PlayMusicTracks(); // start game music
         gameObject.SetActive(false); // hide tutorial
     }
 }

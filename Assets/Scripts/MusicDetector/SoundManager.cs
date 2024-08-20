@@ -68,6 +68,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMusicTracks()
     {
+        if (startBpmCounter) return;
         // BUG: Playing a slash sound instead of one of the audio tracks
         for (int i = 0; i < audioSources.Count; i++)
         {
